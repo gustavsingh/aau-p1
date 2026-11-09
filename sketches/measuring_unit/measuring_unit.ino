@@ -30,4 +30,9 @@ void loop(){
   perform_dht_measurements();
 
   delay(4000);
+
+
+
+
+  // kjbjhbjhbjhbjhbjhbhbvj
 }
