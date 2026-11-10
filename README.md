@@ -2,3 +2,4 @@
 
 ## Dependencies
 DHT22 by dvarrel
+LoRa by Sandeep Mistry
