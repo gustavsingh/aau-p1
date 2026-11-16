@@ -2,4 +2,6 @@
 
 ## Dependencies
 DHT22 by dvarrel<br>
-LoRa by Sandeep Mistry
+LoRa by Sandeep Mistry<br>
+WiFi by Arduino<br>
+Adafruit Sensor
