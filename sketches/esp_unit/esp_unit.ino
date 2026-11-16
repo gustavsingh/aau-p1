@@ -1,8 +1,12 @@
 #include <WiFi.h>
+#include <SPI.h>
+#include <LoRa.h>
 
 const char *SSID = "eduroam-2.4Ghz";
-const char *USER = "######@net.aau.dk";
-const char *PASS = "######";
+const char *USER = "501359@net.aau.dk";
+const char *PASS = "spsgvnecmjfbaze";
+
+const bool LORA_ENABLE = false;
 
 void setup() {
   Serial.begin(115200);
@@ -28,6 +32,20 @@ void setup() {
   Serial.print("The IP Address of this Host is ");
   Serial.println(WiFi.localIP());
   
+  delay(2000);
+  Serial.println("");
+  Serial.println("Device will now attempt to establish connection with LoRa module...");
+
+  LoRa.setPins(5, 14, 26);
+
+  if (LoRa.begin(433E6) == 0) {
+    Serial.println("RA-01 Device could not be found on the ESP 32 Unit");
+    while (1) delay(100);
+  }
+  // Ensure this is the same on Slave Devices
+  LoRa.setSyncWord(0xA5);
+
+  Serial.println("RA-01 LoRa Unit was connected successfully");
 }
 
 void loop() {
