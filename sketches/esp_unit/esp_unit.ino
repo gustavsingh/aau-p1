@@ -3,8 +3,8 @@
 #include <LoRa.h>
 
 const char *SSID = "eduroam-2.4Ghz";
-const char *USER = "501359@net.aau.dk";
-const char *PASS = "spsgvnecmjfbaze";
+const char *USER = "#####@net.aau.dk";
+const char *PASS = "#####";
 
 const bool LORA_ENABLE = false;
 
