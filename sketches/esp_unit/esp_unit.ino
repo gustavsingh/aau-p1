@@ -36,8 +36,10 @@ void setup() {
   Serial.println("");
   Serial.println("Device will now attempt to establish connection with LoRa module...");
 
+  // Sets the LoRa Pins (NSS, RST, DIO0)
   LoRa.setPins(5, 14, 26);
 
+  // Ensure the LoRa device can be found
   if (LoRa.begin(433E6) == 0) {
     Serial.println("RA-01 Device could not be found on the ESP 32 Unit");
     while (1) delay(100);
@@ -45,9 +47,20 @@ void setup() {
   // Ensure this is the same on Slave Devices
   LoRa.setSyncWord(0xA5);
 
+  // Callback to dataReceived Function and begin data retrieval
+  LoRa.onReceive(dataReceived);
+  LoRa.receive();
+
   Serial.println("RA-01 LoRa Unit was connected successfully");
 }
 
 void loop() {
 
+}
+
+// Callback Function for Data Retrieval
+void dataReceived(int packetSize) {
+  Serial.println("Packet received");
+  
+  // TODO: Implement full data retrieval here
 }
