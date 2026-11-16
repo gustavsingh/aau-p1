@@ -3,9 +3,12 @@
 #include <LoRa.h>
 
 const char *SSID = "eduroam-2.4Ghz";
+
+// Make sure not to upload your credentials :)
 const char *USER = "#####@net.aau.dk";
 const char *PASS = "#####";
 
+// Toggle for LoRa module
 const bool LORA_ENABLE = false;
 
 void setup() {
